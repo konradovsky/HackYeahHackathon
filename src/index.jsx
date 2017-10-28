@@ -26,7 +26,9 @@ import reducers from './reducers';
 // Views
 import Index from './views/Index/Index';
 import Home from './views/Home/Home';
-import SecondPage from './views/SecondPage/SecondPage';
+import Login from './views/Login/Login';
+import Register from './views/Register/Register';
+import About from './views/About/About';
 
 // Main styles import.
 import './scss/global.scss';
@@ -57,7 +59,7 @@ const muiTheme = getMuiTheme({
 // WebFont Loader configuration.
 const config = {
   google: {
-    families: ['Roboto:400,500,700:latin,latin-ext'],
+    families: ['Roboto:300,400,700:latin,latin-ext'],
   },
 };
 
@@ -70,7 +72,9 @@ ReactDOM.render(
         <Router history={customHistory}>
           <Index>
             <Switch>
-              <Route path="/secondpage" component={SecondPage} />
+              <Route path="/about" component={About} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route path="/" component={Home} />
             </Switch>
           </Index>

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Container } from '../../utils/styledComponents';
-import { Header } from './Home_styles';
+import { Header } from './About_styles';
 
-export default class Home extends Component {
+export default class About extends Component {
   render() {
     return (
       <Container>
-        <Header>Home page</Header>
+        <Header>About page</Header>
       </Container>
     );
   }

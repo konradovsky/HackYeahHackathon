@@ -9,6 +9,7 @@ export const StyledAppBar = styled(AppBar)`
   right: 0;
   height: ${navHeight}px;
   background-color: ${colorPalette.primary1Color} !important;
+  box-shadow: none !important;
 
   > div:first-child {
     display: flex;

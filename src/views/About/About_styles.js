@@ -6,8 +6,3 @@ export const Header = styled.h1`
   font-size: 30px;
   color: ${colorPalette.textColor};
 `;
-
-export const Image = styled.img`
-  max-height: 200px;
-  margin-top: 30px;
-`;

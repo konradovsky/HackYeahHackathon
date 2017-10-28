@@ -1,10 +1,18 @@
 export default [
   {
-    name: 'Strona główna',
+    name: 'Home',
     path: '/',
   },
   {
-    name: 'Inna strona',
-    path: '/secondpage',
+    name: 'About',
+    path: '/about',
+  },
+  {
+    name: 'Login',
+    path: '/login',
+  },
+  {
+    name: 'Register',
+    path: '/register',
   },
 ];
