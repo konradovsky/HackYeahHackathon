@@ -24,7 +24,7 @@ export default class Nav extends Component {
     return (
       <div>
         <StyledAppBar
-          title="React Starter"
+          title="Aidly"
           showMenuIconButton={false}
           iconElementRight={<IconElementRight handleSelect={this.handleSelect} />}
         />
