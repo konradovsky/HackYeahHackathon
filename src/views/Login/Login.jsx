@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import { Container } from '../../utils/styledComponents';
-import { Header } from './Login_styles';
+import valuesConfig from './valuesConfig';
+import { initializeForm } from '../../utils/formHelpers';
+import { renderTextField } from '../../utils/renderHelpers';
+import { Container, Text, Form, StyledRaisedButton } from './Login_styles';
 
-export default class Login extends Component {
+export default class Register extends Component {
+  componentWillMount() {
+    initializeForm(this, valuesConfig);
+  }
+
   render() {
     return (
       <Container>
-        <Header>Login page</Header>
+        <Text>Logowanie</Text>
+        <Form>
+          {renderTextField(this, 'E-mail', 'email', { fullWidth: true })}
+          {renderTextField(this, 'Password', 'password', { fullWidth: true })}
+          <StyledRaisedButton label="Submit" primary onClick={this.handleSubmit} />
+        </Form>
       </Container>
     );
   }

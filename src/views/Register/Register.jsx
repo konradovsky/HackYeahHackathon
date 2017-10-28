@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import valuesConfig from './valuesConfig';
 import { initializeForm } from '../../utils/formHelpers';
 import { renderTextField } from '../../utils/renderHelpers';
-import { Container, Form, StyledRaisedButton } from './Register_styles';
+import { Container, Form, Text, StyledRaisedButton } from './Register_styles';
 
 export default class Register extends Component {
   componentWillMount() {
@@ -12,6 +12,7 @@ export default class Register extends Component {
   render() {
     return (
       <Container>
+        <Text>Rejestracja</Text>
         <Form>
           {renderTextField(this, 'First Name', 'firstname')}
           {renderTextField(this, 'Last Name', 'lastname')}
