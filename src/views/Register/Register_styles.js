@@ -4,11 +4,20 @@ import { colorPalette, navHeight } from '../../utils/constants/styles';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   min-height: calc(100vh - ${navHeight}px);
   background-color: ${colorPalette.primary1Color};
+`;
+
+export const Text = styled.h1`
+  text-align: center;
+  font-size: 36px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 40px;
 `;
 
 export const Form = styled.form`
@@ -28,6 +37,6 @@ export const Form = styled.form`
 `;
 
 export const StyledRaisedButton = styled(RaisedButton)`
-  margin: 40px 0 10px auto;
+  margin: 40px auto 10px;
   width: 150px !important;
 `;
