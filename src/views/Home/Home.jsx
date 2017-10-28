@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import Hero from './Hero/Hero';
-import { Container } from '../../utils/styledComponents';
-import { Header } from './Home_styles';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import { Container, Middle, Text } from './Home_styles';
 
 export default class Home extends Component {
   render() {
     return (
-      <Hero />
+      <Container>
+        <Middle>
+          <Text>Find opportunities to <span>help</span></Text>
+          <SearchBar />
+        </Middle>
+      </Container>
     );
   }
 }
