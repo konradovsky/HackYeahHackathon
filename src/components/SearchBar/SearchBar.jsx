@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import connect from 'react-redux/lib/connect/connect';
 import bindActionCreators from 'redux/lib/bindActionCreators';
 import axios from 'axios';
+import { withRouter } from 'react-router';
 import AutoComplete from 'material-ui/AutoComplete';
 import SearchIcon from 'material-ui/svg-icons/action/search';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
+import { search } from '../../actions/offers';
 import { Container, SearchContainer, SearchIconWrapper, CloseIconWrapper } from './SearchBar_styles';
 
-export default class SearchBar extends Component {
+@withRouter
+class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,6 +22,7 @@ export default class SearchBar extends Component {
   }
 
   componentWillMount() {
+    this.props.search(this.state.searchText);
     // const query = this.state.searchText || '*';
     // const url = `${__ROOT_URL__}api/circles_tooltip?query=${query}&limit=3`;
     // axios.get(url).then(
@@ -27,7 +31,10 @@ export default class SearchBar extends Component {
   }
 
   onRequestSearch = (chosenRequest) => {
-    this.props.updateQuery(chosenRequest);
+    if (this.props.location.pathname === '/') {
+      this.props.history.push('/offers');
+    }
+    this.props.search(chosenRequest);
   }
 
   handleFocus = () => {
@@ -36,7 +43,6 @@ export default class SearchBar extends Component {
 
   handleBlur = () => {
     this.setState({ focus: false });
-    this.props.updateQuery(this.props.searchText);
   }
 
   handleInput = (searchText) => {
@@ -45,12 +51,12 @@ export default class SearchBar extends Component {
 
   handleCancel = () => {
     this.setState({ active: false, searchText: '' });
-    this.props.updateQuery('');
+    this.props.search('');
   }
 
   handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !this.props.searchText) {
-      this.props.updateQuery(this.props.searchText);
+    if (e.key === 'Enter' && !this.props.query) {
+      this.onRequestSearch(this.state.searchText);
     }
   }
 
@@ -87,3 +93,15 @@ export default class SearchBar extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    query: state.query,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ search }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
