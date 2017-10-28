@@ -42,8 +42,8 @@ export const RightHolder = styled.div`
 export const HappyImage = styled.div`
   background-image: url('./img/Happy.svg');
   background-repeat: no-repeat;
-  height: 50%;
-  width: 80%;
+  height: 60%;
+  width: 90%;
   text-align: center;
 `;
 export const MainText = styled.div`
@@ -71,6 +71,7 @@ export const AboutHeader = styled.div`
   font-size: 40px;
   text-align: center;
   padding: 5px;
+  font-weight: 300;
   margin-top: 30px;
   margin-bottom: 30px;
 `;
