@@ -14,7 +14,11 @@ export const StyledAppBar = styled(AppBar)`
   box-shadow: none !important;
 
   > h1 {
+    max-width: 60px;
+    font-size: 24px;
+    font-weight: 400;
     color: ${colorPalette.primary1Color} !important;
+    cursor: pointer;
   }
 
   > div:first-child {

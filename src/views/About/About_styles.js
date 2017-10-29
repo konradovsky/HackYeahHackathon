@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorPalette , navHeight} from '../../utils/constants/styles';
+import { colorPalette } from '../../utils/constants/styles';
 
 export const Header = styled.h1`
   margin-top: 30px;
@@ -9,7 +9,7 @@ export const Header = styled.h1`
 
 export const Holder = styled.div`
   background-color: ${colorPalette.primary1Color};
-  height: calc(100vh - ${navHeight}px);
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ export const AboutSec = styled.div`
   width: 100%;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.19) 0 10px 30px, rgba(0, 0, 0, 0.23) 0 6px 10px;
-  height: 500px;
+  height: 520px;
 `;
 
 export const LeftHolder = styled.div`
@@ -58,6 +58,7 @@ export const AboutText = styled.div`
   background-color: white;
   width: 80%;
   height: 100%;
+  line-height: 1.3;
   p {
     color: ${colorPalette.textColor};
     font-size: 18px;
@@ -75,5 +76,3 @@ export const AboutHeader = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
 `;
-
-

@@ -12,7 +12,7 @@ export default class Register extends Component {
   render() {
     return (
       <Container>
-        <Text>Logowanie</Text>
+        <Text>Login</Text>
         <Form>
           {renderTextField(this, 'E-mail', 'email', { fullWidth: true })}
           {renderTextField(this, 'Password', 'password', { fullWidth: true })}

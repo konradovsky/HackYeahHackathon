@@ -29,6 +29,8 @@ import Home from './views/Home/Home';
 import Offers from './views/Offers/Offers';
 import Login from './views/Login/Login';
 import Register from './views/Register/Register';
+import OrganizationRegister from './views/OrganizationRegister/OrganizationRegister';
+import PersonRegister from './views/PersonRegister/PersonRegister';
 import About from './views/About/About';
 
 // Main styles import.
@@ -77,6 +79,8 @@ ReactDOM.render(
               <Route path="/about" component={About} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
+              <Route path="/personregister" component={PersonRegister} />
+              <Route path="/organizationregister" component={OrganizationRegister} />
               <Route path="/" component={Home} />
             </Switch>
           </Index>

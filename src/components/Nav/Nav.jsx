@@ -25,6 +25,7 @@ export default class Nav extends Component {
       <div>
         <StyledAppBar
           title="Aidly"
+          onTitleTouchTap={() => { this.props.history.push('/'); }}
           showMenuIconButton={false}
           iconElementRight={<IconElementRight handleSelect={this.handleSelect} />}
         />
