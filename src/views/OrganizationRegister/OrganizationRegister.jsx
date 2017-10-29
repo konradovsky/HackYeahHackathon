@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import valuesConfig from './valuesConfig';
 import { initializeForm } from '../../utils/formHelpers';
 import { renderTextField } from '../../utils/renderHelpers';
@@ -7,6 +8,14 @@ import { Container, Form, Text, StyledRaisedButton } from './OrganizationRegiste
 export default class OrganizationRegister extends Component {
   componentWillMount() {
     initializeForm(this, valuesConfig);
+  }
+
+  submit = (values) => {
+    console.log(values);
+    const url = `${__ROOT_URL__}api/userOrganisation/register`;
+    axios.post(url, values).then((data) => {
+      console.log(data);
+    }, (res) => { console.log(res); });
   }
 
   render() {

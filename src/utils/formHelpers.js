@@ -17,11 +17,6 @@ export const initializeForm =  (comp, valuesConfig) => {
   // Validation with submit callback.
   comp.handleSubmit = () => { validate(comp, comp.submit); };
 
-  // Submit function.
-  comp.submit = (values) => {
-    console.log(values);
-  };
-
   // Initialize state of module.
   comp.setState({
     errors: {},

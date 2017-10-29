@@ -27,6 +27,7 @@ import reducers from './reducers';
 import Index from './views/Index/Index';
 import Home from './views/Home/Home';
 import Offers from './views/Offers/Offers';
+import Offer from './views/Offer/Offer';
 import Login from './views/Login/Login';
 import Register from './views/Register/Register';
 import OrganizationRegister from './views/OrganizationRegister/OrganizationRegister';
@@ -75,6 +76,7 @@ ReactDOM.render(
         <Router history={customHistory}>
           <Index>
             <Switch>
+              <Route path="/offers/:id" component={Offer} />
               <Route path="/offers" component={Offers} />
               <Route path="/about" component={About} />
               <Route path="/login" component={Login} />

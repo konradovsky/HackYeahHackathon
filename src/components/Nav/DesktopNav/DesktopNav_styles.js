@@ -5,4 +5,7 @@ import { colorPalette, navHeight } from '../../../utils/constants/styles';
 export default styled(FlatButton)`
   min-height: ${navHeight}px;
   color: ${colorPalette.primary1Color} !important;
+  span {
+    font-weight: 700 !important;
+  }
 `;
