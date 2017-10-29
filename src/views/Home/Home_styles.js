@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: calc(100vh - ${navHeight}px);
-  background: url('./img/Background.png') no-repeat center/cover;
+  background: url('/img/Background.png') no-repeat center/cover;
 `;
 
 export const Middle = styled.div`
