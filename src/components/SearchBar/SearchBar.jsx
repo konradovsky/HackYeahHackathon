@@ -23,11 +23,6 @@ class SearchBar extends Component {
 
   componentWillMount() {
     this.props.search(this.state.searchText);
-    // const query = this.state.searchText || '*';
-    // const url = `${__ROOT_URL__}api/circles_tooltip?query=${query}&limit=3`;
-    // axios.get(url).then(
-    //   (data) => { this.setState({ suggestions: data.data.data }); },
-    // );
   }
 
   onRequestSearch = (chosenRequest) => {

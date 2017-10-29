@@ -1,3 +1,4 @@
 export const START_SEARCH = 'START_SEARCH';
-export const EXTEND_SEARCH = 'EXTEND_SEARCH';
+export const GET_DETAILS = 'GET_DETAILS';
 export const UPDATE_QUERY = 'UPDATE_QUERY';
+export const REMOVE_DETAILS = 'REMOVE_DETAILS';

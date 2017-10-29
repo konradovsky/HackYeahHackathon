@@ -1,31 +1,42 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import connect from 'react-redux/lib/connect/connect';
+import bindActionCreators from 'redux/lib/bindActionCreators';
+import { removeDetails } from '../../actions/offers';
 import { Wrapper, StyledContainer, Header, Organisation, StyledRaisedButton, Basics, Left, Type, Right, Name, Numbers, Element, Title, Number, IconsWrapper, Iconset, Icon, Description, Details, Content, Detailsimage, ButtonContainer, StyledRaisedButton2 } from './Offer_styles';
 
 @withRouter
-export default class Offer extends Component {
+class Offer extends Component {
+  componentWillUnmount() {
+    this.props.removeDetails();
+  }
+
   render() {
+    const { name, organization, type, capacity, hours, city, when, description } = this.props.details;
+    const date = `${when.getDay() + 1}.${when.getMonth() + 1}.${when.getFullYear()}`;
+    const time = `${when.getHours()}:${when.getMinutes()}`;
+
     return (
       <Wrapper>
         <StyledContainer>
           <Header>
-            <Organisation>Unicef</Organisation>
+            <Organisation>{organization}</Organisation>
             <StyledRaisedButton label="help as volunteer" secondary />
           </Header>
           <Basics>
             <Left>
-              <Type src={`/img/type_icons/couple.svg`} />
+              <Type src={`/img/type_icons/${type}.svg`} />
             </Left>
             <Right>
-              <Name>American veterans foundation</Name>
+              <Name>{name}</Name>
               <Numbers>
                 <Element>
                   <Title>People</Title>
-                  <Number>7</Number>
+                  <Number>{capacity}</Number>
                 </Element>
                 <Element>
                   <Title>Hours</Title>
-                  <Number>4</Number>
+                  <Number>{hours}</Number>
                 </Element>
               </Numbers>
             </Right>
@@ -33,27 +44,19 @@ export default class Offer extends Component {
           <IconsWrapper>
             <Iconset>
               <Icon src="/img/table_icons/localization.svg" />
-              <Description>Wrocław</Description>
+              <Description>{city}</Description>
             </Iconset>
             <Iconset>
               <Icon src="/img/table_icons/calendar.svg" />
-              <Description>21.07.2018</Description>
+              <Description>{date}</Description>
             </Iconset>
             <Iconset>
               <Icon src="/img/table_icons/stopwatch.svg" />
-              <Description>8:00</Description>
+              <Description>{time}</Description>
             </Iconset>
           </IconsWrapper>
           <Details>
-            <Content>
-              Jesteśmy jednym z najmłodszych kół działających na Uniwersytecie Ekonomicznym we Wrocławiu.
-              Powstaliśmy, aby połączyć pasje i umiejętności
-              studentów związane z tworzeniem stron i aplikacji internetowych, a następnie wykorzystywać je do
-              realizacji wartościowych idei. Łącząc siły pragniemy stworzyć miejsce, w którym każda osoba
-              zainteresowana tematyką koła będzie mogła rozwijać swoje umiejętności poprzez praktyczne projekty,
-              szkolenia oraz wymianę wiedzy z pozostałymi
-              członkami.
-            </Content>
+            <Content>{description}</Content>
             <Detailsimage src="/img/archive.svg" />
           </Details>
           <ButtonContainer>
@@ -64,3 +67,15 @@ export default class Offer extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    details: state.details,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ removeDetails }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Offer);
