@@ -27,14 +27,14 @@ export const Profile = styled.div`
   text-align: center;
   background-color: ${colorPalette.primary2Color};
   img {
-      margin-top: 60px;
-      margin-bottom: 10px;
-      width: 50px;
-      height: 50px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
   }
   p {
-      color: white;
-      font-size: 20px;
+    color: white;
+    font-size: 20px;
   }
 `;
 
@@ -46,11 +46,11 @@ export const Name = styled.div`
   color: white;
   text-align: center;
   h1 {
-      font-size: 40px;
-      padding: 5px;
-      font-weight: 200;
-      margin-top: 55px;
-      margin-bottom: 10px;
+    font-size: 40px;
+    padding: 5px;
+    font-weight: 200;
+    margin-top: 55px;
+    margin-bottom: 10px;
   }
 `;
 export const GameSection = styled.div`
