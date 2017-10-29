@@ -32,6 +32,7 @@ import Login from './views/Login/Login';
 import Register from './views/Register/Register';
 import OrganizationRegister from './views/OrganizationRegister/OrganizationRegister';
 import PersonRegister from './views/PersonRegister/PersonRegister';
+import OrgProfile from './views/OrgProfile/OrgProfile';
 import About from './views/About/About';
 
 // Main styles import.
@@ -83,6 +84,7 @@ ReactDOM.render(
               <Route path="/register" component={Register} />
               <Route path="/personregister" component={PersonRegister} />
               <Route path="/organizationregister" component={OrganizationRegister} />
+              <Route path="/orgprofile" component={OrgProfile} />
               <Route path="/" component={Home} />
             </Switch>
           </Index>

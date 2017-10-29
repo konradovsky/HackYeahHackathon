@@ -2,3 +2,7 @@ export const START_SEARCH = 'START_SEARCH';
 export const GET_DETAILS = 'GET_DETAILS';
 export const UPDATE_QUERY = 'UPDATE_QUERY';
 export const REMOVE_DETAILS = 'REMOVE_DETAILS';
+export const GET_MY_OFFERS = 'GET_MY_OFFERS';
+export const UPDATE_MY_OFFERS = 'UPDATE_MY_OFFER';
+export const REMOVE_MY_OFFER = 'REMOVE_MY_OFFER';
+export const ADD_MY_OFFER = 'ADD_MY_OFFER';

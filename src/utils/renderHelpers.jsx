@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 
-const inputStyle = {
+export const inputStyle = {
   floatingLabelFocusStyle: { fontWeight: 400 },
   floatingLabelShrinkStyle: { fontWeight: 700 },
   style: { fontWeight: 400 },
