@@ -30,6 +30,7 @@ import Offers from './views/Offers/Offers';
 import Offer from './views/Offer/Offer';
 import Login from './views/Login/Login';
 import Register from './views/Register/Register';
+import Volunteer from './views/VolunteerProfile/Volunteer';
 import OrganizationRegister from './views/OrganizationRegister/OrganizationRegister';
 import PersonRegister from './views/PersonRegister/PersonRegister';
 import OrgProfile from './views/OrgProfile/OrgProfile';
@@ -82,6 +83,7 @@ ReactDOM.render(
               <Route path="/about" component={About} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
+              <Route path="/volunteer" component={Volunteer} />              
               <Route path="/personregister" component={PersonRegister} />
               <Route path="/organizationregister" component={OrganizationRegister} />
               <Route path="/orgprofile" component={OrgProfile} />
